@@ -1,10 +1,27 @@
+/**
+* @file main.cpp
+ * @brief Entry point for the cpp-oop-review project demonstrating OOP concepts.
+ * @author IoT Solution Development Staff
+ * @date 2025-03-27
+ * @version 1.0
+ * @license MIT
+ *
+ * This file serves as the entry point for cpp-oop-review, a C++ console application designed to
+ * illustrate Object-Oriented Programming (OOP) concepts. It simulates a compilation process where
+ * a Process manages Tasks (scanning, parsing, etc.), utilizing Consumable (Memory) and Usable (CPU)
+ * resources, showcasing encapsulation, inheritance, polymorphism, and abstraction.
+ */
+
 #include "Process.h"
 #include "Task.h"
 #include "UsableResource.h"
 #include "ConsumableResource.h"
 #include <iostream>
-#include <memory>
 
+/**
+ * @brief Main function to demonstrate OOP concepts via process simulation.
+ * @return 0 on successful execution, 1 if a critical error occurs.
+ */
 int main() {
     try {
         // Compilation process for main.c
