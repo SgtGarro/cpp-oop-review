@@ -11,8 +11,8 @@
  * @param durationInUnits Duration of execution in time units.
  * @throw std::invalid_argument If name is empty or duration is not positive.
  */
-Executable::Executable(const std::string& name, std::string  description,
-                       const std::vector<std::string>& requiredResourcesNames, int durationInUnits)
+Executable::Executable(const std::string &name, std::string description,
+                       const std::vector<std::string> &requiredResourcesNames, const int durationInUnits)
     : name(name), description(std::move(description)), requiredResourcesNames(requiredResourcesNames),
       durationInUnits(durationInUnits), assignedResources() {
     if (name.empty()) throw std::invalid_argument("Executable name cannot be empty");
@@ -31,7 +31,7 @@ std::string Executable::getName() const {
  * @brief Retrieves the names of required resources.
  * @return A constant reference to the vector of resource names.
  */
-const std::vector<std::string>& Executable::getRequiredResourcesNames() const {
+const std::vector<std::string> &Executable::getRequiredResourcesNames() const {
     return requiredResourcesNames;
 }
 
@@ -48,13 +48,13 @@ int Executable::getDurationInUnits() const {
  * @param resourcePool The pool of available resources.
  * @throw std::runtime_error If any required resource is unavailable.
  */
-void Executable::assignResources(const std::vector<std::unique_ptr<Resource>>& resourcePool) {
+void Executable::assignResources(const std::vector<std::unique_ptr<Resource> > &resourcePool) {
     assignedResources.clear();
     if (requiredResourcesNames.empty()) return;
 
-    for (const auto& resourceName : requiredResourcesNames) {
+    for (const auto &resourceName: requiredResourcesNames) {
         bool found = false;
-        for (auto& resource : resourcePool) {
+        for (auto &resource: resourcePool) {
             if (resource->getName() == resourceName && resource->isAvailableForUse()) {
                 resource->allocate();
                 assignedResources.push_back(resource.get());
@@ -73,12 +73,12 @@ void Executable::assignResources(const std::vector<std::unique_ptr<Resource>>& r
  * @brief Releases all assigned resources.
  */
 void Executable::releaseResources() {
-    for (auto* resource : assignedResources) {
+    for (auto *resource: assignedResources) {
         try {
             resource->release();
-        } catch (const std::exception& e) {
+        } catch (const std::exception &e) {
             std::cerr << "Warning: Failed to release resource '" << resource->getName()
-                      << "' in '" << name << "': " << e.what() << "\n";
+                    << "' in '" << name << "': " << e.what() << "\n";
         }
     }
     assignedResources.clear();
@@ -89,24 +89,18 @@ void Executable::releaseResources() {
  * @param resourcePool The pool of available resources.
  * @return True if all required resources are available, false otherwise.
  */
-bool Executable::canExecute(const std::vector<std::unique_ptr<Resource>>& resourcePool) const {
-    if (requiredResourcesNames.empty()) return true;
-    for (const auto& resourceName : requiredResourcesNames) {
+bool Executable::canExecute(const std::vector<std::unique_ptr<Resource> > &resourcePool) const {
+    if (requiredResourcesNames.empty()) {
+        std::cout << "No resources required for task " << name << "\n";
+        return true;
+    }
+    for (const auto &resourceName: requiredResourcesNames) {
         if (std::none_of(resourcePool.begin(), resourcePool.end(),
-            [&resourceName](const std::unique_ptr<Resource>& resource) {
-                return resource->getName() == resourceName && resource->isAvailableForUse(); })) {
+                         [&resourceName](const std::unique_ptr<Resource> &resource) {
+                             return resource->getName() == resourceName && resource->isAvailableForUse();
+                         })) {
             return false;
-                }
+        }
     }
     return true;
 }
-
-/**
- * @brief Virtual destructor for proper cleanup in derived classes.
- */
-Executable::~Executable() {
-    releaseResources();
-}
-
-
-

@@ -40,7 +40,7 @@ void Process::execute() const {
     std::cout << "Executing process '" << name << ": " << description
               << " (Duration: " << durationInUnits << " units)\n";
     if (!assignedResources.empty()) {
-        for (const auto& resource : assignedResources) {
+        for (const auto* resource : assignedResources) {
             resource->use();
         }
     }

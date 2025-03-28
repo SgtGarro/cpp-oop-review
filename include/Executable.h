@@ -18,7 +18,7 @@ protected:
     std::string description; ///< Descriptive text explaining the entity's purpose.
     std::vector<std::string> requiredResourcesNames; ///< Names of resources required for execution.
     int durationInUnits; ///< Duration of execution in abstract time units.
-    std::vector<Resource *> assignedResources; ///< Pointers to resources currently assigned.
+    std::vector<Resource*> assignedResources; ///< Pointers to resources currently assigned.
 public:
     /**
      * @brief Constructs an Executable entity.
@@ -34,7 +34,7 @@ public:
     /**
     * @brief Virtual destructor for proper cleanup in derived classes.
     */
-    virtual ~Executable();
+    virtual ~Executable() = default;
 
     /**
     * @brief Retrieves the entity's unique identifier.
@@ -59,7 +59,7 @@ public:
      * @param resourcePool The pool of available resources.
      * @throw std::runtime_error If any required resource is unavailable.
      */
-    void assignResources(const std::vector<std::unique_ptr<Resource> >& resourcePool);
+    void assignResources(const std::vector<std::unique_ptr<Resource>>& resourcePool);
 
     /**
      * @brief Releases all assigned resources.
@@ -77,7 +77,7 @@ public:
      * @param resourcePool The pool of available resources.
      * @return True if all required resources are available, false otherwise.
      */
-    [[nodiscard]] bool canExecute(const std::vector<std::unique_ptr<Resource> >& resourcePool) const;
+    [[nodiscard]] bool canExecute(const std::vector<std::unique_ptr<Resource>>& resourcePool) const;
 };
 
 #endif //EXECUTABLE_H
