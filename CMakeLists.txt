@@ -1,16 +1,16 @@
 #[[
     @file CMakeLists.txt
-    @brief Configuration file for building the RefinedProcessSystem project with CMake.
-    @author IoT Solution Development Team
+    @brief Configuration file for building the cpp-oop-review project with CMake.
+    @author IoT Solution Development Staff
     @date 2025-03-27
     @version 1.0
     @license MIT
 
-    This file configures the build for RefinedProcessSystem, a C++ console application simulating
-    the compilation of source code (main.c) into an executable binary (main.exe). A Process manages
-    a sequence of Tasks (scanning, parsing, static analysis, code generation, linking), utilizing
-    Consumable (Memory) and Usable (CPU) resources. Classes are organized in separate files under
-    include/ and src/ directories. Built with C++17 features.
+    This file configures the build for cpp-oop-review, a C++ console application designed to
+    illustrate Object-Oriented Programming (OOP) concepts using a process simulation. It models
+    a compilation pipeline with Processes and Tasks utilizing Consumable (Memory) and Usable (CPU)
+    resources, showcasing encapsulation, inheritance, polymorphism, and abstraction. Classes are
+    organized in separate files under include/ and src/ directories. Built with C++17 features.
 ]]
 # Minimum required CMake version for compatibility
 cmake_minimum_required(VERSION 3.30)
