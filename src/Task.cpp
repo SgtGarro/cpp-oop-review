@@ -10,7 +10,7 @@
  * @throw std::invalid_argument If name is empty or duration is not positive.
  */
 Task::Task(const std::string& name, const std::string& description,
-           const std::vector<std::string>& requiredResourcesNames, int durationInUnits)
+           const std::vector<std::string>& requiredResourcesNames, const int durationInUnits)
     : Executable(name, description, requiredResourcesNames, durationInUnits) {}
 
 /**
