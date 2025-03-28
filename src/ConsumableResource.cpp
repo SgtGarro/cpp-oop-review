@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <iostream>
 
-ConsumableResource::ConsumableResource(const std::string& name, int capacity)
+ConsumableResource::ConsumableResource(const std::string& name, const int capacity)
     : Resource(name, Type::Consumable), totalCapacity(capacity), remainingCapacity(capacity) {
     if (capacity <= 0) {
         throw std::invalid_argument("Capacity for resource '" + name + "' must be positive");

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
-UsableResource::UsableResource(const std::string& name, int capacity)
+UsableResource::UsableResource(const std::string& name, const int capacity)
     : Resource(name, Type::Usable), capacity(capacity) {
     if (capacity <= 0) {
         throw std::invalid_argument("Capacity for resource '" + name + "' must be positive");
