@@ -1,9 +1,3 @@
-# Class Diagram
-
-Below is the class diagram for `cpp-oop-review`, illustrating the relationships and hierarchy of classes used to simulate a compilation process in C++. It reflects C++-specific types, method signatures, and naming conventions.
-
-## PlantUML Diagram
-
 ```plantuml
 @startuml
 
