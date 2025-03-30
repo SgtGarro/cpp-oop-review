@@ -27,7 +27,6 @@ The primary goal of `cpp-oop-review` is educational: to provide a practical exam
 - **Documentation**: Doxygen-style comments for classes, attributes, and methods.
 
 # Class Diagram
-![Class Diagram](docs/class-diagram.png)
 Following is the class diagram for the project, illustrating the relationships between classes and their attributes/methods.
 
 ![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202510-1asi0572-sandbox/cpp-oop-review/refs/heads/master/docs/class-diagram.md?token=GHSAT0AAAAAAC7JG2V4DUHG4SPXXYVLWI3MZ7JPZKQ)
