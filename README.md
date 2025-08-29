@@ -5,7 +5,7 @@
 **cpp-oop-review** is a C++ console application designed to illustrate the core concepts of Object-Oriented Programming (OOP) using a process simulation. The project implements a simplified compilation pipeline—converting a source file (`main.c`) into an executable (`main.exe`)—to demonstrate encapsulation, inheritance, polymorphism, and abstraction. A `Process` manages a sequence of `Task` objects (e.g., scanning, parsing, static analysis, code generation, linking), utilizing resources like `Consumable` Memory and `Usable` CPU.
 
 **Author**: IoT Solution Development Staff  
-**Date**: March 27, 2025  
+**Date**: August 28th, 2025  
 **Version**: 1.0  
 **License**: MIT
 
@@ -29,7 +29,7 @@ The primary goal of `cpp-oop-review` is educational: to provide a practical exam
 # Class Diagram
 Following is the class diagram for the project, illustrating the relationships between classes and their attributes/methods.
 
-![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202510-1asi0572-sandbox/cpp-oop-review/refs/heads/master/docs/class-diagram.md?token=GHSAT0AAAAAAC7JG2V4DUHG4SPXXYVLWI3MZ7JPZKQ)
+![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202520-1asi0572-sandbox/cpp-oop-review/refs/heads/master/docs/class-diagram.md?token=GHSAT0AAAAAAC7JG2V4DUHG4SPXXYVLWI3MZ7JPZKQ)
 ## Prerequisites
 
 - **CMake**: Version 3.10 or higher
