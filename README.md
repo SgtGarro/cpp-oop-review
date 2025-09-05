@@ -12,6 +12,7 @@
 ## Purpose
 
 The primary goal of `cpp-oop-review` is educational: to provide a practical example of OOP principles in C++ through a process simulation. It serves as a learning tool for developers to explore:
+
 - **Encapsulation**: Data and behavior are bundled within classes (e.g., `Resource`, `Task`).
 - **Inheritance**: Classes like `ConsumableResource` and `UsableResource` inherit from `Resource`.
 - **Polymorphism**: Virtual methods (e.g., `execute()`) allow runtime behavior variation.
@@ -27,9 +28,11 @@ The primary goal of `cpp-oop-review` is educational: to provide a practical exam
 - **Documentation**: Doxygen-style comments for classes, attributes, and methods.
 
 # Class Diagram
+
 Following is the class diagram for the project, illustrating the relationships between classes and their attributes/methods.
 
-![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202520-1asi0572-3443/cpp-oop-review/refs/heads/master/docs/class-diagram.puml)
+![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SgtGarro/cpp-oop-review/refs/heads/master/docs/class-diagram.puml)
+
 ## Prerequisites
 
 - **CMake**: Version 3.10 or higher
@@ -55,14 +58,20 @@ Following is the class diagram for the project, illustrating the relationships b
 4. **Build the Executable**:
    ```bash
     cmake --build .
-    ```
+   ```
+
 ## Usage
+
 Run the compiled executable from the `build/` directory:
+
 ```bash
 ./cpp-oop-review
 ```
+
 The application will simulate a compilation process, outputting the tasks and resources involved.
+
 ### Example Output
+
 ```plaintext
 Starting compilation simulation...
 Executing process 'CompileMain': Compile main.c to main.exe (Duration: 15 units)
