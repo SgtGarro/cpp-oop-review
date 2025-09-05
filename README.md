@@ -29,7 +29,7 @@ The primary goal of `cpp-oop-review` is educational: to provide a practical exam
 # Class Diagram
 Following is the class diagram for the project, illustrating the relationships between classes and their attributes/methods.
 
-![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202520-1asi0572-sandbox/cpp-oop-review/refs/heads/master/docs/class-diagram.md?token=GHSAT0AAAAAADJGFNEZJGOHFDLRLSMYQ7LY2FRXZHA)
+![Class Diagram](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202520-1asi0572-3443/cpp-oop-review/refs/heads/master/docs/class-diagram.md)
 ## Prerequisites
 
 - **CMake**: Version 3.10 or higher
